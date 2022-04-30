@@ -1,23 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
-
+import ApprovalCard from './ApprovalCard';
+import CommentDetail from './CommentDetail';
 function App() {
+
+  //const buttonText  ='Click Here';
+  const buttonText  ={ text:'Click Here!!'};
+
+  const getNameButton = () => 'Click on Here';
+
+  const getTime = () =>{
+    return (new Date()).toLocaleTimeString()
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="ui container comments">
+       <ApprovalCard>
+        <CommentDetail 
+       author="amine" 
+       data="today" 
+       blogtext="Nice Blog Post!!!"/>
+       </ApprovalCard>
+
+       <ApprovalCard>
+      <CommentDetail
+       author="karima" 
+       data="yesterday" 
+       blogtext="Nice Blog Post1!!!"/>
+       </ApprovalCard>
+
+       <ApprovalCard>
+        <CommentDetail 
+      author="ayoub" 
+      data="futur"  
+      blogtext="Nice Blog Post2!!!"/>
+      </ApprovalCard>
+
     </div>
   );
 }
